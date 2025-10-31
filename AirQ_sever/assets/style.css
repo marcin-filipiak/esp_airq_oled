@@ -1,0 +1,83 @@
+/* style.css - formularz przypisania flagmana */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #ccefff, #ffffff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffffcc;
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #005f99;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.msg {
+    background: #e6f7ff;
+    border: 1px solid #99ddff;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #005f99;
+    font-weight: bold;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #004466;
+    text-align: left;
+}
+
+form input[type="text"], form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #99ddff;
+    background: #f0faff;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus, form select:focus {
+    border-color: #3399ff;
+    box-shadow: 0 0 5px rgba(51,153,255,0.3);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00aaff, #0077cc);
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0077cc, #005f99);
+}
+
+
