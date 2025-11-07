@@ -46,24 +46,25 @@ class AirQ {
 
 
 	//zarejestrowanie aktywnosci flagmana
-	public function activity_flagman($name_flagman){
+    public function activity_flagman($name_flagman) {
 
-		$name_flagman = strtoupper($name_flagman);
-		$datetime = date("Y-m-d H:i:s");
-		$ip = $this->getip();
+        $name_flagman = strtoupper($name_flagman);
+        $datetime = date("Y-m-d H:i:s");
+        $ip = $this->getip();
 
-		$fl = $this->get_flagman($name_flagman);
-		if ($fl['name_flagman'] != ""){
-			$query = "UPDATE AirQ_flagman 
-				  SET ip='$ip', last_connection = '$datetime'  
-				  WHERE name_flagman='$name_flagman'";
-		        $this->db->sql_query($query);	
-			return 1;
-		}
-		else {
-			return 0;
-		}
-	}
+        $fl = $this->get_flagman($name_flagman);
+
+        if ($fl && isset($fl['name_flagman']) && $fl['name_flagman'] != "") {
+            $query = "UPDATE AirQ_flagman 
+                      SET ip='$ip', last_connection = '$datetime'  
+                      WHERE name_flagman='$name_flagman'";
+            $this->db->sql_query($query);	
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 
 	//polaczenie sygnalizatora ze stacja
     public function pair_flagman($name_flagman,$id_station){
