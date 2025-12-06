@@ -46,8 +46,8 @@ if ($flagman !== '') {
     $station = $AirQ->get_station($fg['id_station']);
     
     $FC = new FileCache(__DIR__ ."/cache/".$flagman.".txt");
-    //jesli dane nieaktualne (w sekundach 2700) to zakeszowanie nowych, jesli brak danych to zrobienie
-	if ($FC->Cdata['created'] > 2700 || $FC->Cdata['exist'] == 0){
+    //jesli dane nieaktualne (w sekundach 7200 czyli 2h) to zakeszowanie nowych, jesli brak danych to zrobienie
+	if ($FC->Cdata['old'] > 7200 || $FC->Cdata['exist'] == 0){
             //pobranie danych AQICN
             $q = $AirQAqicn->show_quality($station['id_aqicn']);
 
